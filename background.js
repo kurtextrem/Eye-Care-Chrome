@@ -18,8 +18,8 @@ var opt = {
 var audio = true
 
 chrome.alarms.onAlarm.addListener(function _notify(alarm) {
-	if (alarm.scheduledTime > Date.now() + 3.6e+6)
-		return // we don't want to fire, as alarm was hold back > 1h; Probably shut down Chrome etc.
+	if (Date.now() - alarm.scheduledTime > 60000)
+		return // we don't want to fire, as alarm was hold back > 1min; Probably shut down Chrome etc.
 
 	notify()
 })
