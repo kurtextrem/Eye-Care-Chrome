@@ -1,6 +1,6 @@
 {
 	"name": "Eye Care Notification",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"manifest_version": 2,
 
 	"description": "Reminds you to look away from your screen every 20min (by default) .",
@@ -20,8 +20,12 @@
 	},
 
 	"options_page": "options.html",
+	"options_ui": {
+		"page": "options.html",
+		"chrome_style": true
+	},
 
 	"minimum_chrome_version": "42",
 
-	"permissions": ["tabs", "notifications", "storage", "alarms"]
+	"permissions": ["notifications", "storage", "alarms"]
 }
