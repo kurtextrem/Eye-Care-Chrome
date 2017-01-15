@@ -5,7 +5,7 @@
     <title>Greenscreen</title>
     <link rel="icon" href="eye-icon.png">
     <style>
-    html,
+              html,
     body {
         width: 100%;
         height: 100%;
@@ -13,29 +13,43 @@
         background-color: green;
         display: flex;
         justify-content: flex-end;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         font-size: 14px;
-        line-height: 1.42857143;
+        font-weight: 400;
+        line-height: 1;
       }
-      div {
-        background-color: rgba(255,255,255,0.3);
-        border-top-left-radius: 10px;
-        padding: 10px;
-        align-self: flex-end;
-        opacity: 0.2;
-        transition: opacity 1s;
-      }
-      div:hover {
-         opacity: 1;
-      }
+
+      html:-webkit-full-screen > body > div {
+          opacity: 0;
+        }
+
+        div {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-top-left-radius: 10px;
+            padding: 10px;
+            align-self: flex-end;
+            opacity: 0.2;
+            transition: opacity 1s;
+          }
+
+          div:hover {
+              opacity: 1;
+            }
+
+            a {
+                color: #0275d8;
+                text-decoration: none;
+                text-decoration-skip: ink;
+              }
     </style>
 </head>
 
 <body>
-        <div>
-            <p>Staring at an object at a close range for too long can cause damages to your eyes and cause fatigue and some really nasty syndromes.</p>
-            <p>Staring at a green screen after working on your computer for 20 mintues or more tends to ease your eyes and help with the fatigue.</p>
-            <small>Source: Exxxpers</small>
-        </div>
+    <div>
+        <p>Staring at an object at a close range for too long can cause damages to your eyes and cause fatigue and some really nasty syndromes.</p>
+        <p>A green screen tends to help your eyes and ease the fatigue after working on your computer for 20 mintues.</p>
+        <p>For the best experience, click F11 (<a href="javascript:document.documentElement.webkitRequestFullScreen()">fullscreen</a>).<sup>(Source: Exxxpers)</sup></p>
+    </div>
 </body>
 
 </html>
