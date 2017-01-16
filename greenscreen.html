@@ -48,8 +48,16 @@
     <div>
         <p>Staring at an object at a close range for too long can cause damages to your eyes and cause fatigue and some really nasty syndromes.</p>
         <p>A green screen tends to help your eyes and ease the fatigue after working on your computer for 20 mintues.</p>
-        <p>For the best experience, click F11 (<a href="javascript:document.documentElement.webkitRequestFullScreen()">fullscreen</a>).<sup>(Source: Exxxpers)</sup></p>
+        <p>For the best experience, click F11 (<a href="#" id="fullscreen">fullscreen</a>).<sup>(Source: Exxxpers)</sup></p>
     </div>
+    <script>
+        'use strict'
+        document.getElementById('fullscreen').addEventListener('click', function(e) {
+            e.preventDefault()
+            e.preventPropagation()
+            document.documentElement.webkitRequestFullScreen()
+        })
+    </script>
 </body>
 
 </html>
