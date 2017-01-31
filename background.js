@@ -2,7 +2,7 @@
 
 var audioElement = document.createElement('audio')
 audioElement.src = chrome.extension.getURL('Bing-sound.mp3')
-audioElement.volume = 0.4
+audioElement.volume = 0.3
 
 var opt = {
 	type: 'basic',
