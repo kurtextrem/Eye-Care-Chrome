@@ -5,40 +5,48 @@
     <link rel="icon" href="eye-icon.png">
     <style>
               html,
-    body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        background-color: green;
-        display: flex;
-        justify-content: flex-end;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 1;
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: green;
+    display: flex;
+    justify-content: flex-end;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  html:-webkit-full-screen div:not(#exit) {
+      opacity: 0;
+    }
+
+    html:-webkit-full-screen #exit {
+        display: block;
       }
 
-      html:-webkit-full-screen > body > div {
-          opacity: 0;
+      div {
+          background-color: rgba(255, 255, 255, 0.3);
+          border-top-left-radius: 10px;
+          padding: 10px;
+          align-self: flex-end;
+          opacity: 0.2;
+          transition: opacity 1s;
         }
 
-        div {
-            background-color: rgba(255, 255, 255, 0.3);
-            border-top-left-radius: 10px;
-            padding: 10px;
-            align-self: flex-end;
-            opacity: 0.2;
-            transition: opacity 1s;
+        div:hover {
+            opacity: 1;
           }
 
-          div:hover {
-              opacity: 1;
+          a {
+              color: #0275d8;
+              text-decoration: none;
+              text-decoration-skip: ink;
             }
 
-            a {
-                color: #0275d8;
-                text-decoration: none;
-                text-decoration-skip: ink;
+            #exit {
+                display: none;
               }
     </style>
 </head>
@@ -48,13 +56,11 @@
         <p>A green screen tends to help your eyes and ease the fatigue after working on your computer for 20 mintues.</p>
         <p>For the best experience, click F11 (<a href="#" id="fullscreen">fullscreen</a>).<sup>(Source: Exxxpers)</sup></p>
     </div>
-    <script>
-        'use strict'
-        document.getElementById('fullscreen').addEventListener('click', function(e) {
-            e.preventDefault()
-            e.preventPropagation()
-            document.documentElement.webkitRequestFullScreen()
-        })
-    </script>
+
+    <div id="exit">
+        <a href="#" id="exit-fullscreen">Exit fullscreen</a>
+    </div>
+
+    <script src="greenscreen.js" defer></script>
 </body>
 </html>
