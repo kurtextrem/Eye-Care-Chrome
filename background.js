@@ -15,8 +15,6 @@ var opt = {
 	}]
 }
 
-var audio = true
-
 chrome.alarms.onAlarm.addListener(function _notify(alarm) {
 	if (Date.now() - alarm.scheduledTime > 60000)
 		return // we don't want to fire, as alarm was hold back > 1min; Probably shut down Chrome etc.
@@ -46,14 +44,21 @@ function notify() {
 	})
 }
 
+var sound = null
 function play() {
-	if (audio && audioElement)
-		audioElement.play()
+	if (sound === null) {
+		chrome.storage.local.get({ sound: true }, function(data) {
+			sound = data.sound
+			play()
+		})
+	} else {
+		if (sound && audioElement)
+			audioElement.play()
+	}
 }
 
 chrome.runtime.onInstalled.addListener(function listener() {
-	chrome.storage.local.get({ interval: 20, audio: true }, function (data) {
-		audio = data.audio
+	chrome.storage.local.get({ interval: 20, sound: true }, function (data) {
 		chrome.alarms.clear('notify', function () {
 			chrome.alarms.create('notify', { delayInMinutes: data.interval, periodInMinutes: data.interval })
 		})
