@@ -1,8 +1,8 @@
 'use strict'
 
 var audioElement = document.createElement('audio')
-audioElement.src = chrome.extension.getURL('Bing-sound.mp3')
-audioElement.volume = 0.3
+audioElement.src = chrome.extension.getURL('ding.ogg')
+audioElement.volume = 0.5
 
 var opt = {
 	type: 'basic',
