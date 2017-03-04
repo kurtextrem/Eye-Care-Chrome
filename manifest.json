@@ -1,11 +1,13 @@
 {
 	"name": "Eye Care Notification",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"manifest_version": 2,
 
-	"description": "Reminds you to look away from your screen every 20min (by default) .",
+	"description": "Reminds you to look away from your screen every 20min (by default).",
 	"icons": {
-		"128": "eye-icon.png"
+		"128": "eye-icon.png",
+		"16": "eye-icon.png",
+		"48": "eye-icon.png"
 	},
 	"author": "Jacob „kurtextrem\" Groß",
 
