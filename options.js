@@ -26,7 +26,7 @@ form.addEventListener('change', function() {
 		})
 	else {
 		chrome.alarms.clear('badge')
-		chrome.browserAction.setBadgeText({ text: '' })
+		chrome.action.setBadgeText({ text: '' })
 	}
 })
 
@@ -52,11 +52,11 @@ function update(time, badge) {
 	if (badge) {
 		const mins = Math.round((time - Date.now()) / 1000 / 60)
 		const string = mins + 'min'
-		chrome.browserAction.setTitle({ title: 'Next alarm in ' + string })
-		chrome.browserAction.setBadgeText({ text: string })
-		chrome.browserAction.setBadgeBackgroundColor({ color: '#E0E0E0' }) // #BDBDBD
+		chrome.action.setTitle({ title: 'Next alarm in ' + string })
+		chrome.action.setBadgeText({ text: string })
+		chrome.action.setBadgeBackgroundColor({ color: '#E0E0E0' }) // #BDBDBD
 	} else
-		chrome.browserAction.setTitle({
+		chrome.action.setTitle({
 			title: 'Next alarm at' + date.toLocaleTimeString(),
 		})
 }
